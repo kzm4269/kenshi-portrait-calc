@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Kenshi portrait calc</title>
+  </head>
+  <body>
+    <p>Kenshi portrait calc</p>
+    <script>javascript:(function(){input=window.prompt("横回転,縦回転を-100～100%で入力してください", "-100,-100");[x,y]=input.split(",").map(parseFloat);s=Array(64).keys().map(i=>{s=(x+100)*2.5+500*i;return [Math.abs((125*s%%31500/31500-0.5)*200-y),s];}).reduce((a,b)=>a[0]<b[0]?a:b)[1];window.alert(`計算結果\nportrait_serial = ${s}`)})()</script>
+  </body>
+</html>
