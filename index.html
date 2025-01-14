@@ -12,7 +12,7 @@
         x=Math.min(Math.max(x,-99.99),+99.99);
         y=Math.min(Math.max(y,-99.99),+99.99);
         s=Array(64).keys().map(i=>{
-          s=Math.round((x+100)/2*5)+500*i;
+          s=Math.floor((x+100)/2*5)+500*i;
           return [Math.abs((125*s%31500/31500-0.5)*200-y),s];
         }).reduce((a,b)=>a[0]<b[0]?a:b)[1];
         window.alert(`計算結果\nportrait_serial = ${s}`)
