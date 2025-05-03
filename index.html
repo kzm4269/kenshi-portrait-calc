@@ -7,7 +7,7 @@
     <p>Kenshi portrait calc</p>
     <script>
       (function(){
-        input=window.prompt("横回転,縦回転を-100～100%で入力してください", "-100,-100");
+        input=window.prompt("Enter horizontal rotation and vertical rotation from -100% to 100%.\n横回転,縦回転を-100～100%で入力してください", "-100,-100");
         [x,y]=input.split(",").map(parseFloat);
         x=Math.min(Math.max(x,-99.99),+99.99);
         y=Math.min(Math.max(y,-99.99),+99.99);
@@ -15,7 +15,7 @@
           s=Math.floor((x+100)/2*5)+500*i;
           return [Math.abs((125*s%31500/31500-0.5)*200-y),s];
         }).reduce((a,b)=>a[0]<b[0]?a:b)[1];
-        window.alert(`計算結果\nportrait_serial = ${s}`)
+        window.alert(`Result\nportrait_serial = ${s}`)
       })()
     </script>
   </body>
